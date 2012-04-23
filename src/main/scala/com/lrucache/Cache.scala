@@ -1,4 +1,4 @@
-package com.locusenergy.frontend.lift.common.model
+package com.lrucache
 
 import scala.collection.mutable.HashMap
 import java.util.{LinkedHashMap, Map => JavaMap}

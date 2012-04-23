@@ -1,4 +1,4 @@
-package com.locusenergy.frontend.lift.common.model
+package com.lrucache
 
 object FuncCache {
   val DEFAULT_LIFESPAN = 600000   // 10 min

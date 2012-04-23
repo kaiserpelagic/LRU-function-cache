@@ -1,8 +1,8 @@
-package com.locusenergy.frontend.lift.common.model
+package com.lrucache
 
 import net.liftweb.util.Helpers
   
-case class CacheValue2[T](compute: () => T, lifespan: Long) {
+case class CacheValue[T](compute: () => T, lifespan: Long) {
   var value: Option[T] = None
   var lastComputed: Long = 0
 
