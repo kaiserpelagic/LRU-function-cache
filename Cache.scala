@@ -1,4 +1,4 @@
-package pelagic.cache
+package com.locusenergy.frontend.lift.common.model
 
 import scala.collection.mutable.HashMap
 import java.util.{LinkedHashMap, Map => JavaMap}
@@ -8,14 +8,22 @@ class Cache[K,V](theMaxSize: Int) {
   
   val maxSize = theMaxSize
 
-  var cache = new LinkedHashMap[K, V] {
+  var cache = new LinkedHashMap[K, V]() {
     override def removeEldestEntry(entry: JavaMap.Entry[K, V]) = {
-      size > maxSize
+      size() > maxSize
     }
   }
 
   def update(key: K, value: V) = {
     cache.put(key, value)
+  }
+
+  def remove(key: K) = {
+    cache.remove(key)
+  }
+
+  def keys() = {
+    cache.keySet()
   }
 
   def get(key: K): Option[V] = {

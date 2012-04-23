@@ -1,15 +1,15 @@
-package pelagic.cache
+package com.locusenergy.frontend.lift.common.model
 
 import net.liftweb.util.Helpers
   
-case class CacheValue[T](compute: () => T, lifespan: Long) {
+case class CacheValue2[T](compute: () => T, lifespan: Long) {
   var value: Option[T] = None
   var lastComputed: Long = 0
 
   def get = {
     val now = Helpers.millis
     if (lifespan < now - lastComputed) {
-      value = None 
+      value = None
     }
     value match {
       case Some(v) => v

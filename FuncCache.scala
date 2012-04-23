@@ -1,4 +1,4 @@
-package pelagic.cache
+package com.locusenergy.frontend.lift.common.model
 
 object FuncCache {
   val DEFAULT_LIFESPAN = 600000   // 10 min
